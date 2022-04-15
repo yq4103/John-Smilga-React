@@ -1,7 +1,20 @@
 import React, { useState } from 'react';
 
 const UseStateBasics = () => {
-  return <h2>useState basic example</h2>;
+  let [title, setTitle] = useState('Random title');
+
+  const handle = ()=>{
+    if (title === 'Random title') {
+      setTitle('Changed Title');
+    } else {
+      setTitle('Random title');
+    }
+  }
+
+  return <>
+    <h2>{title}</h2>
+    <button className='btn' onClick={handle}>Change title</button>
+  </>
 };
 
 export default UseStateBasics;
